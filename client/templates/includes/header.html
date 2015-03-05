@@ -16,7 +16,7 @@
 	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	            <ul class="nav navbar-nav">
 	                <li>
-	                    <a href="{{pathFor 'postSubmit'}}">Poser une question</a>
+	               		{{#if currentUser}}<a href="{{pathFor 'postSubmit'}}">Poser une question</a>{{/if}}
 	                </li>
 	                <!-- <li>
 	                    <a href="#">Services</a>
@@ -25,13 +25,10 @@
 	                    <a href="#">Contact</a>
 	                </li> -->
 	            </ul>
-	        </div>
-
-	        <div class="collapse navbar-collapse" id="navigation">
-						<ul class="nav navbar-nav navbar-right">
+	            <ul class="nav navbar-nav navbar-right">
 							{{> loginButtons}}
 						</ul>
-					</div>
+	        </div>
 	        <!-- /.navbar-collapse -->
 	    </div>
 	    <!-- /.container -->
