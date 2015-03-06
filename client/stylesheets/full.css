@@ -17,3 +17,5 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
+
+a img {margin-top:-10px;}
