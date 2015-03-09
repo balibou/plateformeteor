@@ -12,11 +12,14 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        {{#if currentUser}}
         <ul class="nav navbar-nav">
           <li>
-          {{#if currentUser}}<a href="{{pathFor 'postSubmit'}}">Poser une question</a>{{/if}}
+          <a href="{{pathFor 'postSubmit'}}">Poser une question</a>
           </li>
+          <li class="dropdown">{{> notifications}}</li>
         </ul>
+        {{/if}}
         <ul class="nav navbar-nav navbar-right">
 					{{> loginButtons}}
 				</ul>
