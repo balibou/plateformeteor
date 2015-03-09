@@ -1,14 +1,16 @@
 <template name="postSubmit">
 	<form class="main form page">
-		<div class="form-group">
+		<div class="form-group {{errorClass 'title'}}">
 			<label class="control-label" for="title">Titre</label>
 			<div class="controls">
 				<input name="title" id="title" type="text" value="" placeholder="Quelle est votre question ? Soyez précis." class="form-control"/>
+				<span class="help-block">{{errorMessage 'title'}}</span>
 			</div>
 		</div>
-		<div class="form-group">
+		<div class="form-group {{errorClass 'question'}}">
 			<div class="controls">
 				<textarea name="question" id="question" type="text" value="" class="form-control"></textarea>
+				<span class="help-block">{{errorMessage 'question'}}</span>
 			</div>
 		</div>
 		<input type="submit" value="Valider" class="btn btn-primary"/>

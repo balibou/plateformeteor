@@ -10,11 +10,28 @@ Template.postSubmit.events({
 		// post._id = Posts.insert(post);
 		// Router.go('postPage', post);
 
+		var errors = validatePost(post);
+		if (errors.title || errors.question)
+			return Session.set('postSubmitErrors', errors);
+
 		Meteor.call('postInsert', post, function(error, result) {
 			if (error)
-				return alert(error.reason);
+				return throwError(error.reason);
 			
 			Router.go('postsList');
 		});
+	}
+});
+
+Template.postSubmit.created = function() {
+	Session.set('postSubmitErrors', {});
+}
+
+Template.postSubmit.helpers({
+	errorMessage: function(field) {
+		return Session.get('postSubmitErrors')[field];
+	},
+	errorClass: function (field) {
+		return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
 	}
 });
