@@ -20,7 +20,3 @@ Template.postsList.helpers({
     });
   }
 })
-      }
-    });
-  }
-})
