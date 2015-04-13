@@ -4,6 +4,11 @@ Template.postsList.helpers({
 	}
 });
 
+<<<<<<< HEAD
+=======
+ //onCreated
+
+>>>>>>> c1e83bfc3104e5c9df0b75abf4b1ee80e96caf2a
  Template.postsList.onCreated(function(){
     if (Accounts._verifyEmailToken) {
     Accounts.verifyEmail(Accounts._verifyEmailToken, function(err) {
@@ -13,7 +18,14 @@ Template.postsList.helpers({
         }
       } else {
         console.log('Thank you! Your email address has been confirmed.')
+<<<<<<< HEAD
      }
     });
   }
 })
+=======
+      }
+    });
+  }
+})
+>>>>>>> c1e83bfc3104e5c9df0b75abf4b1ee80e96caf2a
